@@ -10,7 +10,7 @@ const actualDay = date.getDay();
 // Step 4: Declare a variable to hold a message that will be displayed
 let welcomeMessage = "";
 // Step 5: Using an if statement, if the day of the week is a weekday (i.e. Monday - Friday), set the message variable to the string 'Hang in there!'
-const isNotWeekend = actualDay !== 6 && actualDay !== 7;
+const isNotWeekend = actualDay !== 6 && actualDay !== 0;
 if (isNotWeekend) {
   welcomeMessage = "Hagn in there";
 } else {
@@ -24,27 +24,28 @@ if (isNotWeekend) {
 let welcomeMessage2 = "";
 // Step 2: Use switch, case and break to set the message variable to the day of the week as a string (e.g. Sunday, Monday, etc.) using the day of week variable declared in Step 2 above
 
+console.log(actualDay);
 switch (actualDay) {
   case 1:
-    welcomeMessage2 = "Hagn in there";
+    welcomeMessage2 = "Monday";
     break;
   case 2:
-    welcomeMessage2 = "Hagn in there";
+    welcomeMessage2 = "Tuesday";
     break;
   case 3:
-    welcomeMessage2 = "Hagn in there";
+    welcomeMessage2 = "Wednesday";
     break;
   case 4:
-    welcomeMessage2 = "Hagn in there";
+    welcomeMessage2 = "Thrusday";
     break;
   case 5:
-    welcomeMessage2 = "Hagn in there";
+    welcomeMessage2 = "Friday";
     break;
   case 6:
-    welcomeMessage2 = "Woohoo!  It is the weekend!";
+    welcomeMessage2 = "Saturday";
     break;
-  case 7:
-    welcomeMessage2 = "Woohoo!  It is the weekend!";
+  case 0:
+    welcomeMessage2 = "Sunday";
     break;
   default:
     break;
