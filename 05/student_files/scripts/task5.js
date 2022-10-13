@@ -24,7 +24,6 @@ if (isNotWeekend) {
 let welcomeMessage2 = "";
 // Step 2: Use switch, case and break to set the message variable to the day of the week as a string (e.g. Sunday, Monday, etc.) using the day of week variable declared in Step 2 above
 
-console.log(actualDay);
 switch (actualDay) {
   case 1:
     welcomeMessage2 = "Monday";
@@ -68,12 +67,8 @@ async function getTemples() {
     method: "GET",
   }).then((response) => response.json());
   templesList.push(...response);
-  console.log(
-    "🚀 ~ file: task5.js ~ line 70 ~ getTemples ~ templesList",
-    templesList
-  );
   output(response);
-  addExtraFilterOptions(response[0]);
+  //addExtraFilterOptions(response[0]); :(
 }
 
 function output(templeList) {
@@ -134,14 +129,14 @@ function reset() {
   }
 }
 document.getElementById("sortBy").addEventListener("change", (e) => {
-  reset();
-  console.log(
-    "🚀 ~ file: task5.js ~ line 165 ~ document.getElementById ~ e",
-    e
-  );
-
   const key = e.target.selectedOptions[0].className;
   const value = e.target.value.toLowerCase();
+  sortBy(key, value);
+});
+
+function sortBy(key, value) {
+  reset();
+
   const ascending = (a, b, templeProperty) => {
     if (a[templeProperty] < b[templeProperty]) {
       return -1;
@@ -166,7 +161,7 @@ document.getElementById("sortBy").addEventListener("change", (e) => {
   } else {
     output(templesList.sort((a, b) => ascending(a, b, key)));
   }
-});
+}
 
 function addExtraFilterOptions(templeElement) {
   for (const key in templeElement) {
