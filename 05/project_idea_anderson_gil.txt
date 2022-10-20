@@ -1,0 +1,5 @@
+I want to build an app that shows Rick and Morty characters using this public API https://rickandmortyapi.com/documentation. The content will be initially just photos and names but when the user clicks the card it will show more information about the character.
+
+The project will use fetch to get the data from the API, and once I get the data form the API I will be working with objects. To add more elements I will use a for each and probably a map loop. 
+
+Also, to show more data I will use a filter and then work with the DOM
